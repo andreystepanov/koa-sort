@@ -1,5 +1,8 @@
 // @flow
 import { type Context } from 'koa'
+import debug from 'debug'
+
+const logger = debug('koa:sort')
 
 export default function sort(options?: Object) {
   const defaults = {
@@ -28,8 +31,12 @@ export default function sort(options?: Object) {
       })
 
       if (sortArr.length > 0) {
-        ctx.state[stateParam || paramName] =
-          asObject === true ? sortObj : sortArr
+        const key = stateParam || paramName
+        const value = asObject === true ? sortObj : sortArr
+
+        ctx.state[key] = value
+
+        logger('%s: %O', `ctx.state.${key}`, value)
       }
     }
 

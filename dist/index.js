@@ -5,6 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = sort;
 
+var _debug = _interopRequireDefault(require("debug"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const logger = (0, _debug.default)('koa:sort');
+
 function sort(options) {
   const defaults = {
     param: 'sort',
@@ -35,7 +41,10 @@ function sort(options) {
       });
 
       if (sortArr.length > 0) {
-        ctx.state[stateParam || paramName] = asObject === true ? sortObj : sortArr;
+        const key = stateParam || paramName;
+        const value = asObject === true ? sortObj : sortArr;
+        ctx.state[key] = value;
+        logger('%s: %O', `ctx.state.${key}`, value);
       }
     }
 

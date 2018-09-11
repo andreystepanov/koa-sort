@@ -1,6 +1,6 @@
 {
   "name": "koa-sort",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sort middleware for koa framework",
   "main": "dist/index.js",
   "scripts": {
@@ -47,6 +47,7 @@
     "jest": "^23.5.0"
   },
   "dependencies": {
+    "debug": "^4.0.0",
     "koa": "^2.5.2"
   }
 }

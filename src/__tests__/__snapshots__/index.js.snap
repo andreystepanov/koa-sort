@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reads from custom query param and sets it to custom state param 1`] = `
+Object {
+  "custom": Array [
+    Array [
+      "active",
+      "desc",
+    ],
+    Array [
+      "created_at",
+      "asc",
+    ],
+  ],
+}
+`;
+
+exports[`returns state.order property as object 1`] = `
+Object {
+  "order": Object {
+    "active": "desc",
+    "created_at": "asc",
+  },
+}
+`;
+
+exports[`sets multiple order params 1`] = `
+Object {
+  "order": Array [
+    Array [
+      "active",
+      "desc",
+    ],
+    Array [
+      "created_at",
+      "asc",
+    ],
+  ],
+}
+`;
+
+exports[`sets single "created_at asc" 1`] = `
+Object {
+  "order": Array [
+    Array [
+      "created_at",
+      "asc",
+    ],
+  ],
+}
+`;
+
+exports[`sets single "created_at desc" 1`] = `
+Object {
+  "order": Array [
+    Array [
+      "created_at",
+      "desc",
+    ],
+  ],
+}
+`;
